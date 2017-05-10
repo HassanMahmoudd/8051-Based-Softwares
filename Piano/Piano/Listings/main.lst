@@ -1,0 +1,146 @@
+A51 MACRO ASSEMBLER  MAIN                                                                 03/24/2017 21:16:23 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.5.0
+OBJECT MODULE PLACED IN .\Objects\main.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE main.a51 SET(SMALL) DEBUG PRINT(.\Listings\main.lst) OBJECT(.\Objects\m
+                      ain.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     
+
+                       2     
+
+                       3     
+
+0000                   4                              ORG             0H                     
+
+0000 7590FF            5                              MOV             P1, #0FFH              
+
+                       6     
+
+0003 209008            7     CO:                      JB              P1.0,DO
+
+0006 7FD7              8                              MOV             R7, #215
+
+0008 DFFE              9     LOOP3:           DJNZ            R7, LOOP3
+
+000A 7E06             10                              MOV             R6,#06H
+
+000C 8040             11                              SJMP            LOOP           
+
+000E 209108           12     DO:                      JB                      P1.1,EO
+
+0011 7F14             13                              MOV             R7, #20
+
+0013 DFFE             14     LOOP4:           DJNZ            R7, LOOP4
+
+0015 7E06             15                              MOV             R6,#06H
+
+0017 8035             16                              SJMP            LOOP           
+
+0019 209208           17     EO:                      JB              P1.2,FO
+
+001C 7F67             18                              MOV             R7, #103
+
+001E DFFE             19     LOOP5:           DJNZ            R7, LOOP5
+
+0020 7E05             20                              MOV             R6,#05H
+
+0022 802A             21                              SJMP            LOOP
+
+0024 209308           22     FO:                      JB                      P1.3,GO
+
+0027 7F15             23                              MOV             R7, #21
+
+0029 DFFE             24     LOOP6:           DJNZ            R7, LOOP6
+
+002B 7E05             25                              MOV             R6,#05H
+
+002D 801F             26                              SJMP            LOOP
+
+002F 209408           27     GO:                      JB              P1.4,AO
+
+0032 7F8A             28                              MOV             R7, #138
+
+0034 DFFE             29     LOOP7:           DJNZ            R7, LOOP7
+
+0036 7E04             30                              MOV             R6,#04H
+
+0038 8014             31                              SJMP            LOOP
+
+003A 209508           32     AO:                      JB              P1.5,BO
+
+003D 7F09             33                              MOV             R7, #9
+
+003F DFFE             34     LOOP8:           DJNZ            R7, LOOP8
+
+0041 7E04             35                              MOV             R6,#04H
+
+0043 8009             36                              SJMP            LOOP
+
+0045 2096BB           37     BO:                      JB                      P1.6,CO
+
+0048 7F9A             38                              MOV             R7, #154
+
+004A DFFE             39     LOOP9:           DJNZ            R7, LOOP9
+
+004C 7E03             40                              MOV             R6,#03H                         
+
+004E B2A0             41     LOOP:            CPL             P2.0           ;1
+
+0050 1154             42                              ACALL           Delay_1_sec    ;2
+
+0052 80AF             43                              SJMP            CO                     ;2
+
+                      44                              
+
+0054                  45     Delay_1_sec:
+
+                      46     
+
+0054 7FFF             47     LOOP1:           MOV             R7, #255
+
+0056 DFFE             48     LOOP2:           DJNZ            R7, LOOP2   ;inner loop
+
+0058 DEFA             49                              DJNZ            R6, LOOP1   ;outer loop
+
+005A 22               50                              RET
+
+                      51                              END                            ;end of assembly code file
+
+A51 MACRO ASSEMBLER  MAIN                                                                 03/24/2017 21:16:23 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AO . . . . . . . .  C ADDR   003AH   A   
+BO . . . . . . . .  C ADDR   0045H   A   
+CO . . . . . . . .  C ADDR   0003H   A   
+DELAY_1_SEC. . . .  C ADDR   0054H   A   
+DO . . . . . . . .  C ADDR   000EH   A   
+EO . . . . . . . .  C ADDR   0019H   A   
+FO . . . . . . . .  C ADDR   0024H   A   
+GO . . . . . . . .  C ADDR   002FH   A   
+LOOP . . . . . . .  C ADDR   004EH   A   
+LOOP1. . . . . . .  C ADDR   0054H   A   
+LOOP2. . . . . . .  C ADDR   0056H   A   
+LOOP3. . . . . . .  C ADDR   0008H   A   
+LOOP4. . . . . . .  C ADDR   0013H   A   
+LOOP5. . . . . . .  C ADDR   001EH   A   
+LOOP6. . . . . . .  C ADDR   0029H   A   
+LOOP7. . . . . . .  C ADDR   0034H   A   
+LOOP8. . . . . . .  C ADDR   003FH   A   
+LOOP9. . . . . . .  C ADDR   004AH   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

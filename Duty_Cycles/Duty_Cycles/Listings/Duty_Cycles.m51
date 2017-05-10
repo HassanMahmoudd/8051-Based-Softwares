@@ -1,0 +1,158 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        04/24/2017  19:16:37  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\main.obj TO .\Objects\Duty_Cycles PRINT (.\Listings\Duty_Cycles.m51) RAMSIZE (256)
+>> 
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?IMUL)
+
+
+LINK MAP OF MODULE:  .\Objects\Duty_Cycles (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0004H     UNIT         ?DT?MAIN?MAIN
+            DATA    000CH     0003H     UNIT         ?DT?CONVERT_BCD?MAIN
+            DATA    000FH     0002H     UNIT         ?DT?_TIMER_DELAY?MAIN
+            IDATA   0011H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0052H     UNIT         ?PR?MAIN?MAIN
+            CODE    0852H     0040H     UNIT         ?PR?CONVERT_BCD?MAIN
+            CODE    0892H     002AH     UNIT         ?PR?_TIMER_DELAY?MAIN
+            CODE    08BCH     0012H     UNIT         ?C?LIB_CODE
+            CODE    08CEH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\Duty_Cycles (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN
+  +--> ?PR?CONVERT_BCD?MAIN
+  +--> ?PR?_TIMER_DELAY?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\Duty_Cycles (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/24/2017  19:16:37  PAGE 2
+
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  B:00A0H.6       PUBLIC        ERROR
+  C:0892H         PUBLIC        _timer_delay
+  C:0800H         PUBLIC        main
+  B:00A0H.7       PUBLIC        SW
+  C:0852H         PUBLIC        convert_BCD
+  D:0089H         PUBLIC        TMOD
+  B:0088H.5       PUBLIC        TF0
+  D:008CH         PUBLIC        TH0
+  D:008AH         PUBLIC        TL0
+  B:00A0H.0       PUBLIC        LED
+  B:0088H.4       PUBLIC        TR0
+  -------         PROC          _TIMER_DELAY
+  D:000FH         SYMBOL        t
+  C:0892H         LINE#         9
+  C:0896H         LINE#         10
+  C:0896H         LINE#         11
+  C:08A1H         LINE#         12
+  C:08A8H         LINE#         13
+  C:08B2H         LINE#         14
+  C:08B4H         LINE#         15
+  C:08B7H         LINE#         16
+  C:08B9H         LINE#         17
+  C:08BBH         LINE#         18
+  -------         ENDPROC       _TIMER_DELAY
+  -------         PROC          CONVERT_BCD
+  -------         DO            
+  D:000CH         SYMBOL        number
+  D:000DH         SYMBOL        nLow
+  D:000EH         SYMBOL        nHigh
+  -------         ENDDO         
+  C:0852H         LINE#         20
+  C:0852H         LINE#         21
+  C:0852H         LINE#         22
+  C:0855H         LINE#         23
+  C:0858H         LINE#         24
+  C:085EH         LINE#         25
+  C:0869H         LINE#         26
+  C:0877H         LINE#         27
+  C:0877H         LINE#         28
+  C:0879H         LINE#         29
+  C:087FH         LINE#         30
+  C:087FH         LINE#         31
+  C:0881H         LINE#         32
+  C:088DH         LINE#         33
+  C:0891H         LINE#         35
+  -------         ENDPROC       CONVERT_BCD
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        cycleTime
+  D:000AH         SYMBOL        input
+  -------         ENDDO         
+  C:0800H         LINE#         37
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/24/2017  19:16:37  PAGE 3
+
+
+  C:0800H         LINE#         38
+  C:0800H         LINE#         39
+  C:0806H         LINE#         42
+  C:0809H         LINE#         43
+  C:080BH         LINE#         44
+  C:080DH         LINE#         45
+  C:0810H         LINE#         46
+  C:0813H         LINE#         47
+  C:0813H         LINE#         48
+  C:0813H         LINE#         49
+  C:0816H         LINE#         50
+  C:0816H         LINE#         51
+  C:081DH         LINE#         52
+  C:0823H         LINE#         53
+  C:0827H         LINE#         54
+  C:0829H         LINE#         55
+  C:0837H         LINE#         56
+  C:0839H         LINE#         57
+  C:084DH         LINE#         58
+  C:084FH         LINE#         60
+  C:0851H         LINE#         61
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        ?C?IMUL
+  C:08BCH         PUBLIC        ?C?IMUL
+  -------         ENDMOD        ?C?IMUL
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00BCH BYTE ( 9%) *
+******************************************************************************
+
+Program Size: data=18.0 xdata=0 code=221
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

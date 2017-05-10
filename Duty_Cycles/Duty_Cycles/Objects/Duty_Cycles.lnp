@@ -1,0 +1,3 @@
+".\Objects\main.obj" 
+TO ".\Objects\Duty_Cycles" 
+PRINT(".\Listings\Duty_Cycles.m51") RAMSIZE(256) 
