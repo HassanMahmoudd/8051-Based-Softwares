@@ -1,0 +1,161 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        05/25/2017  04:06:18  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\main.obj TO .\Objects\ProjectDTMF PRINT (.\Listings\ProjectDTMF.m51) RAMSIZE (256)
+>> 
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\ProjectDTMF (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     000AH     UNIT         ?DT?MAIN
+            IDATA   0012H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0003H     ABSOLUTE     
+                    0006H     07FAH                  *** GAP ***
+            CODE    0800H     008CH     UNIT         ?C_C51STARTUP
+            CODE    088CH     0052H     UNIT         ?PR?EXTERNAL_INTERRUPT?MAIN
+            CODE    08DEH     002AH     UNIT         ?PR?MAIN?MAIN
+            CODE    0908H     001DH     UNIT         ?PR?DELAY?MAIN
+            CODE    0925H     0019H     UNIT         ?PR?CHECKPASS?MAIN
+            CODE    093EH     000BH     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\ProjectDTMF (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?PR?EXTERNAL_INTERRUPT?MAIN
+  +--> ?PR?DELAY?MAIN
+
+*** NEW ROOT ***************************************************
+
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN
+  +--> ?PR?CHECKPASS?MAIN
+  +--> ?PR?DELAY?MAIN
+
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/25/2017  04:06:18  PAGE 2
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\ProjectDTMF (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  B:00A8H.7       PUBLIC        EA
+  B:00A0H.1       PUBLIC        ERROR
+  C:0908H         PUBLIC        delay
+  C:0925H         PUBLIC        checkPass
+  D:0008H         PUBLIC        result
+  C:08DEH         PUBLIC        main
+  D:000CH         PUBLIC        count
+  D:000EH         PUBLIC        pass
+  C:088CH         PUBLIC        external_interrupt
+  B:00A8H.0       PUBLIC        EX0
+  B:0088H.0       PUBLIC        IT0
+  B:00A0H.0       PUBLIC        LED
+  -------         PROC          DELAY
+  -------         DO            
+  D:0006H         SYMBOL        i
+  D:0004H         SYMBOL        j
+  -------         ENDDO         
+  C:0908H         LINE#         11
+  C:0908H         LINE#         12
+  C:0908H         LINE#         14
+  C:090BH         LINE#         15
+  C:090BH         LINE#         16
+  C:0919H         LINE#         17
+  C:0924H         LINE#         18
+  -------         ENDPROC       DELAY
+  -------         PROC          CHECKPASS
+  C:0925H         LINE#         20
+  C:0925H         LINE#         21
+  C:0925H         LINE#         22
+  C:0935H         LINE#         23
+  C:093AH         LINE#         24
+  C:093DH         LINE#         25
+  -------         ENDPROC       CHECKPASS
+  -------         PROC          EXTERNAL_INTERRUPT
+  -------         DO            
+  D:0007H         SYMBOL        temp
+  -------         ENDDO         
+  C:088CH         LINE#         27
+  C:089DH         LINE#         31
+  C:08A2H         LINE#         33
+  C:08A5H         LINE#         34
+  C:08A7H         LINE#         36
+  C:08AFH         LINE#         38
+  C:08BEH         LINE#         39
+  C:08BEH         LINE#         40
+  C:08C0H         LINE#         41
+  C:08C3H         LINE#         42
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/25/2017  04:06:18  PAGE 3
+
+
+  C:08C5H         LINE#         43
+  C:08C7H         LINE#         45
+  C:08CFH         LINE#         47
+  -------         ENDPROC       EXTERNAL_INTERRUPT
+  -------         PROC          MAIN
+  -------         DO            
+  D:0006H         SYMBOL        res
+  -------         ENDDO         
+  C:08DEH         LINE#         49
+  C:08DEH         LINE#         50
+  C:08DEH         LINE#         53
+  C:08E1H         LINE#         55
+  C:08E3H         LINE#         56
+  C:08E5H         LINE#         57
+  C:08E7H         LINE#         59
+  C:08E9H         LINE#         60
+  C:08EBH         LINE#         62
+  C:08EBH         LINE#         63
+  C:08EBH         LINE#         64
+  C:08F3H         LINE#         65
+  C:08F3H         LINE#         66
+  C:08F6H         LINE#         68
+  C:08FAH         LINE#         69
+  C:08FCH         LINE#         71
+  C:08FFH         LINE#         72
+  C:0901H         LINE#         73
+  C:0906H         LINE#         74
+  C:0906H         LINE#         75
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00BFH BYTE ( 9%) *
+******************************************************************************
+
+Program Size: data=19.0 xdata=0 code=335
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
